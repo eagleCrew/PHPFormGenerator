@@ -1,0 +1,3 @@
+# Ignores pdfs inside of InputPDFs and OutputPDFs
+InputPDFs/*.pdf
+OutputPDFs/*.pdf
