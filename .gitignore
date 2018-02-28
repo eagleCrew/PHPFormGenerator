@@ -1,3 +1,5 @@
-# Ignores pdfs inside of InputPDFs and OutputPDFs
-InputPDFs/*.pdf
-OutputPDFs/*.pdf
+# Ignores the contents of InputPDFs and OutputPDFs, except for use.txt
+InputPDFs/*
+!InputPDFs/use.txt
+OutputPDFs/*
+!OutputPDFs/use.txt
