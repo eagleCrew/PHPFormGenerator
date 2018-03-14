@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <?php
 session_start();
-include('sql/connectsqli.php');
+//include('sql/connectsqli.php');
 //include sql/connectsqli.php;
-EHConnect();
+//EHConnect();
 //$mysqli = mysqli_connect("localhost", "eh_read_contacts", "Hkj95*k5W2n4bi@9", "eaglehomes");
 
 $firstname = filter_input(INPUT_POST, 'firstname');
@@ -37,8 +37,8 @@ if (mysqli_num_rows($result) == 1) {
         $phone = stripslashes($info['cell_phone']);
         $postal_code = stripslashes($info['postal_code']);
     }
-    
-    
+
+
 
     if ($country_id == 39) {
         $country = 'Canada';
@@ -57,9 +57,9 @@ if (mysqli_num_rows($result) == 1) {
         'country' => $country,
         'province' => $province,
         'city' => $city,
-        'postal_code' => $postal_code         
+        'postal_code' => $postal_code
     );
-    
+
     $_SESSION['info_arr'] = $info_arr;
 
 
@@ -82,7 +82,7 @@ if (mysqli_num_rows($result) == 1) {
     <label for='postal_code'>Postal Code: </label>
     <input type='text' id='postal_code' name ='postal_code' value='" . $postal_code . "'><br><br>
     <button type='submit' value='Generate' id='generate'>Generate</button>
-    
+
     </form
     ";
 }
