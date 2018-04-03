@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Eagle Homes Form Auto-fill</title>
+    <h1>Eagle Homes Form Auto-Filler</h1>
+    </head>
+    <style>
+        body {
+            background-color: #6B86B9;
+            color: #000305;
+            font-size: 100%;
+            font-family: Arial, 'Lucida Sans Unicode';
+            line-height: 1.5;
+            text-align: left;
+            margin: 0 auto;
+            padding: 1em;
+            width: 70%;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        #mstr_form {
+            background-color: #FFFFFF;
+            padding: 1em;
+            border-radius: 5px;
+        }
+        
+        fieldset {
+            border-radius: 5px;
+            padding: 1% 2%;
+            margin-top: 0%;
+            margin-bottom: 2%;
+            border-style: none;
+        }
+        
+        button {
+            margin-left: 1em;
+        }
+        
+        
+    </style>
+    <body>
+        <?php
+        session_start();
+        $display_block = "
+            <div id='mstr_form'>
+                <form method='post' action='formtest.php'>
+                    <fieldset name='search_client'>
+                        <legend><a href='#clientsearch' title='clientsearch'>Search for a Client</a></legend>
+                        <label for='lastname'>Last Name: </label>
+                        <input type='text' id='lastname' name ='lastname'><br><br>
+                        <label for='firstname'>First Name: </label>
+                        <input type='text' id='firstname' name ='firstname'>
+                        <label for='email'>Email: </label>
+                        <input type='text' id='email' name ='email'><br><br>
+                    </fieldset>
+                    <button type='submit' value='search' id='searchbtn'>Search</button>
+                 </form> 
+            </div>";
+        echo $display_block;
+        ?>
+    </body>
+</html>
