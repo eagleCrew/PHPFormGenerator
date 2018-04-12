@@ -1027,12 +1027,13 @@ class FPDM
     protected function _bin2hex($str)
     {
         //----------------------
-        $hex = "";
+	$hex = bin2hex($str);
+	/*$hex = "";
         $i = 0;
         do {
             $hex .= sprintf("%02X", ord($str[$i]));
             $i++;
-        } while ($i < strlen($str));
+        } while ($i < strlen($str));*/
         return $hex;
     }
 
@@ -1127,9 +1128,9 @@ class FPDM
             $shifts = $this->shifts;
         }
 
-        $p = $positions[$object_id];
-        $offset = $offsets[$p];
-        $shift = $shifts[$p]; //size shift of the object due to value changes
+        $p = isset($positions[$object_id]) ? $positions[$object_id] : "";
+        $offset = isset($offsets[$p]) ? $offsets[$p] : "";
+        $shift = isset($shifts[$p]) ? $shifts[$p] : ""; //size shift of the object due to value changes
         return $offset + $shift;
     }
 
